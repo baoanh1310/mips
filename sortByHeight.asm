@@ -42,9 +42,9 @@ after_find_height:
 	j sort_height
 
 after_sort:
-	j change
+	j replace
 
-after_change:
+after_replace:
 	li $v0, 10
 	syscall
 end_main:
@@ -143,7 +143,7 @@ end_loop_1:
 # @note: Reset values of 'height' array = 0 
 #-----------------------------------------------------------
 
-change:
+replace:
 	# Initialize i, j 
 	addi 	$t0, $zero, 0		# i = 0
 	addi 	$t2, $zero, 0		# j = 0
@@ -170,7 +170,7 @@ i_continue:
 	bne  	$t4, $zero, i_loop 
 
 i_end_loop:
-	j 	after_change
+	j 	after_replace
 
 #-----------------------------------------------------------
 # END
